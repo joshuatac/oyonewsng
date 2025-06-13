@@ -1,11 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import MainNav from './MainNav';
 import Image from 'next/image';
 
@@ -21,10 +18,8 @@ type Post = {
 
 const Hero = () => {
   const [trendingPosts, setTrendingPosts] = useState<Post[]>([]);
-  const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const router = useRouter();
 
 
   type WPPost = {
@@ -66,15 +61,9 @@ const Hero = () => {
       });
   }, []);
 
-  const handleSearch = () => {
-    if (query.trim()) {
-      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
-    }
-  };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') handleSearch();
-  };
+
+
 
   return (
     <section className="bg-white">
@@ -84,38 +73,7 @@ const Hero = () => {
       <MainNav />
 
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Main Content with Ad */}
-          
-
-          {/* Sidebar */}
-          <div className="space-y-6">
-
-            {/* Search */}
-            <div className="bg-black rounded-lg p-4">
-              <div className="flex items-center text-white mb-3">
-                <Search className="h-5 w-5 mr-2" />
-                <span className="font-bold">SEARCH FOR POST</span>
-              </div>
-              <div className="flex">
-                <Input
-                  className="flex-1 bg-white"
-                  placeholder="Search..."
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                />
-                <Button
-                  className="ml-2 bg-gray-700 hover:bg-gray-600 text-white"
-                  onClick={handleSearch}
-                >
-                  Search
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        
         {/* Trending Posts */}
         <div className="mt-8">
           <div className="flex space-x-4 mb-6">

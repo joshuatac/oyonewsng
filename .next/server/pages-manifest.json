@@ -1,5 +1,6 @@
 {
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/about": "pages/about.html",
   "/api/banner": "pages/api/banner.js",
@@ -11,7 +12,6 @@
   "/notfound": "pages/notfound.html",
   "/search": "pages/search.html",
   "/signup": "pages/signup.html",
-  "/_error": "pages/_error.js",
   "/[slug]": "pages/[slug].js",
   "/404": "pages/404.html"
 }
