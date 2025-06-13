@@ -3,7 +3,6 @@ import { Calendar, Eye, MessageSquare, User } from "lucide-react";
 import ShareButtons from "@/components/ShareButtons";
 import ViewCounter from "@/components/ViewCounter";
 import CommentsSection from "@/components/CommentSection";
-import * as cheerio from "cheerio";
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";

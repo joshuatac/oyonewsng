@@ -1,0 +1,16 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/about": "pages/about.js",
+  "/api/banner": "pages/api/banner.js",
+  "/api/hello": "pages/api/hello.js",
+  "/category/[categoryName]": "pages/category/[categoryName].js",
+  "/contact": "pages/contact.js",
+  "/": "pages/index.js",
+  "/login": "pages/login.js",
+  "/notfound": "pages/notfound.js",
+  "/search": "pages/search.js",
+  "/signup": "pages/signup.js",
+  "/_error": "pages/_error.js",
+  "/[slug]": "pages/[slug].js"
+}
