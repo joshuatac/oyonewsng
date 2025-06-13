@@ -1,6 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Eye, MessageSquare, User } from "lucide-react";
-import AdBanner from "@/components/AdBanner";
 import ShareButtons from "@/components/ShareButtons";
 import ViewCounter from "@/components/ViewCounter";
 import CommentsSection from "@/components/CommentSection";
@@ -122,20 +121,7 @@ const date = format(new Date(post.date), "MMMM d, yyyy");
         </div>
 
         {/* Main Content with Ads */}
-        <div className="space-y-6">
-          {contentWithAds.map((block, i) =>
-            block === "__AD_PLACEHOLDER__" ? (
-              <AdBanner key={`ad-${i}`} size="medium" position="mid-content" />
-            ) : (
-              <div
-                key={i}
-                className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: block }}
-              />
-            )
-          )}
-        </div>
-
+        
         {/* Tags */}
         <div className="mt-8 pt-6 border-t">
           <h3 className="text-lg font-semibold mb-3">Tags:</h3>
@@ -157,11 +143,7 @@ const date = format(new Date(post.date), "MMMM d, yyyy");
         </div>
       </div>
 
-      {/* Bottom Ad */}
-      <div className="my-8">
-        <AdBanner size="large" position="bottom" />
-      </div>
-
+    
       {/* Related Posts */}
       <div className="bg-white rounded-lg shadow-lg p-6">
         <h3 className="text-2xl font-bold mb-6 text-red-600">Related Posts</h3>

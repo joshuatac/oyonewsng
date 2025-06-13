@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MainNav from "@/components/MainNav";
 import TrendingPosts from "@/components/TrendingPosts";
-import AdBanner from "@/components/AdBanner";
 import PostContent from "@/components/PostContent";
 import { fetchPostBySlug, fetchRelatedPosts } from "@/lib/api";
 import Skeleton from "@/components/SkeletonPost";
@@ -74,9 +73,7 @@ export default function SinglePostPage({ post, relatedPosts }: Props) {
             </div>
             <div className="lg:col-span-1">
               <TrendingPosts />
-              <div className="mt-8">
-                <AdBanner size="sidebar" position="sidebar" />
-              </div>
+            
             </div>
           </div>
         </div>

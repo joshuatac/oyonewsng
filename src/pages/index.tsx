@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LazyVisibleSection from "@/components/LazyVisibleSection";
-import AdBanner from "@/components/AdBanner";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
@@ -50,8 +49,6 @@ const Index = () => {
               </Suspense>
             </LazyVisibleSection>
 
-            <AdBanner size="medium" position="content" />
-
             <LazyVisibleSection height={192}>
               <Suspense fallback={<FallbackSkeletonGrid count={2} />}>
                 <CategorySection />
@@ -67,13 +64,11 @@ const Index = () => {
               </Suspense>
             </LazyVisibleSection>
 
-            <AdBanner size="sidebar" position="sidebar" />
             <Newsletter />
           </aside>
         </div>
       </main>
 
-      <AdBanner size="large" position="bottom" />
       <Footer />
     </div>
   );

@@ -9,7 +9,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AdBanner from "@/components/AdBanner";
 import MainNav from "@/components/MainNav";
 
 const Contact = () => {
@@ -224,10 +223,7 @@ const Contact = () => {
               );
             })}
 
-            <div className="mt-8">
-              <AdBanner size="sidebar" position="sidebar" />
-            </div>
-
+        
             <Card className="mt-8 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-red-600">Follow Us</CardTitle>

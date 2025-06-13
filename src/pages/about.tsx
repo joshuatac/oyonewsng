@@ -1,15 +1,9 @@
-'use client';
+"use client";
 
 import { Users, Target, Award, Globe } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AdBanner from "@/components/AdBanner";
 import MainNav from "@/components/MainNav";
 
 const About = () => {
@@ -29,10 +23,13 @@ const About = () => {
       <div className="bg-red-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">About OyoNews</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              About OyoNews
+            </h1>
             <p className="text-xl md:text-2xl text-red-100 leading-relaxed">
-              Nigeria&apos;s leading source for breaking news, entertainment, politics, and sports.
-              Delivering accurate, timely, and engaging content to millions of readers worldwide.
+              Nigeria&apos;s leading source for breaking news, entertainment,
+              politics, and sports. Delivering accurate, timely, and engaging
+              content to millions of readers worldwide.
             </p>
           </div>
         </div>
@@ -63,26 +60,35 @@ const About = () => {
           <div className="lg:col-span-2">
             {/* Our Story */}
             <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-              <h2 className="text-3xl font-bold text-red-600 mb-6">Our Story</h2>
+              <h2 className="text-3xl font-bold text-red-600 mb-6">
+                Our Story
+              </h2>
               <div className="prose prose-lg max-w-none text-gray-700">
                 <p className="mb-4">
-                  Founded in 2020, OyoNews began as a small blog with a big vision: to become Nigeria&apos;s
-                  most trusted and comprehensive news source. What started as a passion project by a group
-                  of dedicated journalists has grown into one of the country&apos;s most visited news websites.
+                  Founded in 2020, OyoNews began as a small blog with a big
+                  vision: to become Nigeria&apos;s most trusted and
+                  comprehensive news source. What started as a passion project
+                  by a group of dedicated journalists has grown into one of the
+                  country&apos;s most visited news websites.
                 </p>
                 <p className="mb-4">
-                  One thing you would take away from us is “Ingenuity &amp; Originality.” Our stories are timely and authentic.
-                  We feed you with current happenings round Oyo State and Nigeria. We thirst for more.
+                  One thing you would take away from us is “Ingenuity &amp;
+                  Originality.” Our stories are timely and authentic. We feed
+                  you with current happenings round Oyo State and Nigeria. We
+                  thirst for more.
                 </p>
                 <p className="mb-4">
-                  We pride ourselves on delivering breaking news as it happens, providing in-depth analysis
-                  of political developments, covering the vibrant Nigerian entertainment industry, and
-                  keeping our readers updated on sports from local leagues to international competitions.
+                  We pride ourselves on delivering breaking news as it happens,
+                  providing in-depth analysis of political developments,
+                  covering the vibrant Nigerian entertainment industry, and
+                  keeping our readers updated on sports from local leagues to
+                  international competitions.
                 </p>
                 <p className="mb-4">
-                  Our commitment to journalistic integrity, accuracy, and timely reporting has earned us
-                  the trust of millions of readers across Nigeria and the diaspora. We believe in the
-                  power of information to transform lives and communities.
+                  Our commitment to journalistic integrity, accuracy, and timely
+                  reporting has earned us the trust of millions of readers
+                  across Nigeria and the diaspora. We believe in the power of
+                  information to transform lives and communities.
                 </p>
               </div>
             </div>
@@ -95,8 +101,9 @@ const About = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">
-                    To inform, educate, and empower our readers with accurate, timely, and relevant news
-                    that matters to their daily lives and Nigeria&apos;s future.
+                    To inform, educate, and empower our readers with accurate,
+                    timely, and relevant news that matters to their daily lives
+                    and Nigeria&apos;s future.
                   </p>
                 </CardContent>
               </Card>
@@ -107,8 +114,9 @@ const About = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">
-                    To be Africa&apos;s leading digital news platform, setting the standard for quality
-                    journalism and innovative storytelling in the digital age.
+                    To be Africa&apos;s leading digital news platform, setting
+                    the standard for quality journalism and innovative
+                    storytelling in the digital age.
                   </p>
                 </CardContent>
               </Card>
@@ -117,26 +125,38 @@ const About = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <AdBanner size="sidebar" position="sidebar" />
-
             {/* Awards */}
             <Card className="mt-8">
               <CardHeader>
-                <CardTitle className="text-red-600">Awards &amp; Recognition</CardTitle>
+                <CardTitle className="text-red-600">
+                  Awards &amp; Recognition
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="border-l-4 border-red-600 pl-4">
-                    <h4 className="font-semibold">Best Digital News Platform 2023</h4>
-                    <p className="text-sm text-gray-600">Nigerian Media Awards</p>
+                    <h4 className="font-semibold">
+                      Best Digital News Platform 2023
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Nigerian Media Awards
+                    </p>
                   </div>
                   <div className="border-l-4 border-red-600 pl-4">
-                    <h4 className="font-semibold">Excellence in Sports Journalism 2022</h4>
-                    <p className="text-sm text-gray-600">Sports Writers Association</p>
+                    <h4 className="font-semibold">
+                      Excellence in Sports Journalism 2022
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Sports Writers Association
+                    </p>
                   </div>
                   <div className="border-l-4 border-red-600 pl-4">
-                    <h4 className="font-semibold">Rising Digital Media Company 2021</h4>
-                    <p className="text-sm text-gray-600">African Digital Awards</p>
+                    <h4 className="font-semibold">
+                      Rising Digital Media Company 2021
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      African Digital Awards
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -145,7 +165,9 @@ const About = () => {
             {/* Contact Info */}
             <Card className="mt-8">
               <CardHeader>
-                <CardTitle className="text-red-600">Contact Information</CardTitle>
+                <CardTitle className="text-red-600">
+                  Contact Information
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3 text-sm">
@@ -156,7 +178,8 @@ const About = () => {
                     <strong>Phone:</strong> +234 123 456 7890
                   </div>
                   <div>
-                    <strong>Address:</strong> 123 Media Street, Victoria Island, Lagos, Nigeria
+                    <strong>Address:</strong> 123 Media Street, Victoria Island,
+                    Lagos, Nigeria
                   </div>
                 </div>
               </CardContent>

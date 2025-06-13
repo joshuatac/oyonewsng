@@ -7,7 +7,6 @@ import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import MainNav from './MainNav';
-import AdBanner from './AdBanner';
 import Image from 'next/image';
 
 type Post = {
@@ -80,7 +79,6 @@ const Hero = () => {
   return (
     <section className="bg-white">
       {/* Top Ad Banner */}
-      <AdBanner size="large" position="top" />
 
       {/* Navigation */}
       <MainNav />
@@ -88,13 +86,10 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Main Content with Ad */}
-          <div className="lg:col-span-3">
-            <AdBanner size="large" position="content" />
-          </div>
+          
 
           {/* Sidebar */}
           <div className="space-y-6">
-            <AdBanner size="sidebar" position="sidebar" />
 
             {/* Search */}
             <div className="bg-black rounded-lg p-4">
