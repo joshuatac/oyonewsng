@@ -39,22 +39,7 @@ type Props = {
   relatedPosts: RelatedPost[];
 };
 
-const injectAdsIntoContent = (html: string): string[] => {
-  const $ = cheerio.load(html);
-  const elements = $("body").children().toArray();
-  const parts: string[] = [];
 
-  const interval = Math.floor(elements.length / 3) || 2;
-
-  elements.forEach((el, i) => {
-    parts.push($.html(el));
-    if (i > 0 && i % interval === 0) {
-      parts.push("__AD_PLACEHOLDER__");
-    }
-  });
-
-  return parts;
-};
 
 export default function PostContent({ post, relatedPosts }: Props) {
   const featuredImage =
@@ -69,7 +54,6 @@ export default function PostContent({ post, relatedPosts }: Props) {
 
 const date = format(new Date(post.date), "MMMM d, yyyy"); 
   const postUrl = `https://oyonews.ng/${post.slug}`;
-  const contentWithAds = injectAdsIntoContent(post.content.rendered);
 
   return (
     <article className="bg-white rounded-lg shadow-lg overflow-hidden">
