@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 
-
 type Post = {
   id: number;
   slug: string;
@@ -38,8 +37,6 @@ type Props = {
   relatedPosts: RelatedPost[];
 };
 
-
-
 export default function PostContent({ post, relatedPosts }: Props) {
   const featuredImage =
     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
@@ -49,9 +46,11 @@ export default function PostContent({ post, relatedPosts }: Props) {
   const category =
     post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Uncategorized";
   const tags =
-    post._embedded?.["wp:term"]?.[1]?.map((tag: { name: string }) => tag.name) || [];
+    post._embedded?.["wp:term"]?.[1]?.map(
+      (tag: { name: string }) => tag.name
+    ) || [];
 
-const date = format(new Date(post.date), "MMMM d, yyyy"); 
+  const date = format(new Date(post.date), "MMMM d, yyyy");
   const postUrl = `https://oyonews.ng/${post.slug}`;
 
   return (
@@ -93,8 +92,7 @@ const date = format(new Date(post.date), "MMMM d, yyyy");
             <ViewCounter postId={post.id} />
           </div>
           <div className="flex items-center">
-            <MessageSquare className="h-4 w-4 mr-2" />
-            0 comments
+            <MessageSquare className="h-4 w-4 mr-2" />0 comments
           </div>
         </div>
 
@@ -104,7 +102,15 @@ const date = format(new Date(post.date), "MMMM d, yyyy");
         </div>
 
         {/* Main Content with Ads */}
-        
+
+        {/* Main Content */}
+        <div className="space-y-6 mb-8">
+          <div
+            className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          />
+        </div>
+
         {/* Tags */}
         <div className="mt-8 pt-6 border-t">
           <h3 className="text-lg font-semibold mb-3">Tags:</h3>
@@ -126,7 +132,6 @@ const date = format(new Date(post.date), "MMMM d, yyyy");
         </div>
       </div>
 
-    
       {/* Related Posts */}
       <div className="bg-white rounded-lg shadow-lg p-6">
         <h3 className="text-2xl font-bold mb-6 text-red-600">Related Posts</h3>
@@ -139,7 +144,10 @@ const date = format(new Date(post.date), "MMMM d, yyyy");
                 className="flex gap-4 p-4 rounded-lg hover:shadow-md transition-shadow"
               >
                 <Image
-                  src={rp.image || "https://via.placeholder.com/80x80?text=No+Image"}
+                  src={
+                    rp.image ||
+                    "https://via.placeholder.com/80x80?text=No+Image"
+                  }
                   alt={rp.title || "Related post image"}
                   width={80}
                   height={80}
