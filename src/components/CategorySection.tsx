@@ -255,6 +255,7 @@ const CategoryFeed = () => {
                           alt={post.title.rendered.replace(/<[^>]+>/g, "")}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
+                          unoptimized 
                         />
                       </div>
                       <div className="w-2/3 p-4">

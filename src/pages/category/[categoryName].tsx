@@ -139,6 +139,7 @@ const CategoryPage = () => {
                           height={240}
                           className="w-full h-48 object-cover rounded-t-lg"
                           loading="lazy"
+                          unoptimized 
                         />
                         <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm flex items-center">
                           <MessageSquare className="h-3 w-3 mr-1" />

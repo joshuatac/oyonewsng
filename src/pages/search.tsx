@@ -183,6 +183,7 @@ export default function SearchPage() {
                     width={400}
                     height={200}
                     className="w-full h-48 object-cover"
+                    unoptimized 
                   />
                 </Link>
                 <div className="p-4">

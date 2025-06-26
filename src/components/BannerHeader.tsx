@@ -27,6 +27,7 @@ export default function BannerHeader() {
         width={1200}
         height={300}
         layout="responsive"
+        unoptimized 
       />
     </a>
   );

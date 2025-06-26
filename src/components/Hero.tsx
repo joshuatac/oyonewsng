@@ -101,6 +101,7 @@ const Hero = () => {
       fill
       className="object-cover"
       sizes="(max-width: 768px) 100vw, 25vw"
+      unoptimized 
     />
     <div className="absolute top-2 left-2 bg-green-600 text-white px-2 py-1 rounded text-sm font-bold">
       {post.comments}

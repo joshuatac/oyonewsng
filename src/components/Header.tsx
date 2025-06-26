@@ -86,6 +86,7 @@ const Header = () => {
                     width={32}
                     height={32}
                     className="mr-2"
+                    unoptimized 
                   />
                 ) : (
                   <div className="bg-red-600 rounded p-2 mr-2">
