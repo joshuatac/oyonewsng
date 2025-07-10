@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Clock, User, TrendingUp } from "lucide-react";
 import Link from "next/link";
@@ -250,13 +249,13 @@ const CategoryFeed = () => {
                   >
                     <div className="flex">
                       <div className="w-1/3 relative h-32">
-                        <Image
-                          src={featuredMedia}
-                          alt={post.title.rendered.replace(/<[^>]+>/g, "")}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
-                          unoptimized 
-                        />
+                        <img
+  src={featuredMedia}
+  alt={post.title.rendered.replace(/<[^>]+>/g, "")}
+  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+  loading="lazy"
+/>
+
                       </div>
                       <div className="w-2/3 p-4">
                         <h3

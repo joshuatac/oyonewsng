@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import MainNav from './MainNav';
-import Image from 'next/image';
 
 type Post = {
   id: number;
@@ -95,14 +94,13 @@ const Hero = () => {
   className="block bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
 >
   <div className="relative w-full h-48">
-    <Image
-      src={post.image}
-      alt={post.title}
-      fill
-      className="object-cover"
-      sizes="(max-width: 768px) 100vw, 25vw"
-      unoptimized 
-    />
+  <img
+  src={post.image}
+  alt={post.title}
+  loading="lazy"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
     <div className="absolute top-2 left-2 bg-green-600 text-white px-2 py-1 rounded text-sm font-bold">
       {post.comments}
     </div>

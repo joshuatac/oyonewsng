@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -10,7 +10,6 @@ import { MessageSquare, Clock } from "lucide-react";
 import LazyVisibleSection from "@/components/LazyVisibleSection";
 import { Skeleton } from "@/components/ui/skeleton";
 import MainNav from "@/components/MainNav";
-import Image from "next/image";
 
 // Types
 interface Comment {
@@ -64,7 +63,8 @@ const CategoryPage = () => {
 
         const enrichedPosts = data.map((post: Post) => ({
           ...post,
-          featured_media_url: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "",
+          featured_media_url:
+            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "",
           comment_count: post._embedded?.replies?.[0]?.length || 0,
         }));
 
@@ -91,7 +91,10 @@ const CategoryPage = () => {
 
   const truncateWords = (text: string, wordLimit: number) => {
     const words = text.trim().split(/\s+/);
-    return words.slice(0, wordLimit).join(" ") + (words.length > wordLimit ? "..." : "");
+    return (
+      words.slice(0, wordLimit).join(" ") +
+      (words.length > wordLimit ? "..." : "")
+    );
   };
 
   return (
@@ -105,7 +108,8 @@ const CategoryPage = () => {
             {formatCategoryName((categoryName as string) || "Category")}
           </h1>
           <p className="text-gray-600">
-            Latest posts from {formatCategoryName((categoryName as string) || "this category")}
+            Latest posts from{" "}
+            {formatCategoryName((categoryName as string) || "this category")}
           </p>
         </div>
 
@@ -123,7 +127,9 @@ const CategoryPage = () => {
             ))}
           </div>
         ) : posts.length === 0 ? (
-          <p className="text-center text-gray-500">No posts found in this category.</p>
+          <p className="text-center text-gray-500">
+            No posts found in this category.
+          </p>
         ) : (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -132,15 +138,13 @@ const CategoryPage = () => {
                   <Link href={`/${post.slug}`}>
                     <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                       <div className="relative">
-                        <Image
+                        <img
                           src={post.featured_media_url || "/fallback.jpg"}
                           alt={post.title.rendered}
-                          width={400}
-                          height={240}
                           className="w-full h-48 object-cover rounded-t-lg"
                           loading="lazy"
-                          unoptimized 
                         />
+
                         <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm flex items-center">
                           <MessageSquare className="h-3 w-3 mr-1" />
                           {post.comment_count}
@@ -148,11 +152,13 @@ const CategoryPage = () => {
                       </div>
                       <CardContent className="p-4">
                         <h3 className="font-bold text-gray-900 mb-2 hover:text-red-600 transition-colors">
-  <span
-    className="block text-ellipsis overflow-hidden leading-snug line-clamp-2 h-[3em]" // Ensures 2 lines height
-    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-  />
-</h3>
+                          <span
+                            className="block text-ellipsis overflow-hidden leading-snug line-clamp-2 h-[3em]" // Ensures 2 lines height
+                            dangerouslySetInnerHTML={{
+                              __html: post.title.rendered,
+                            }}
+                          />
+                        </h3>
 
                         <p className="text-gray-600 text-sm mb-3 line-clamp-3">
                           {truncateWords(stripHtml(post.excerpt.rendered), 100)}

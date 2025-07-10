@@ -3,7 +3,6 @@ import { Calendar, Eye, MessageSquare, User } from "lucide-react";
 import ShareButtons from "@/components/ShareButtons";
 import ViewCounter from "@/components/ViewCounter";
 import CommentsSection from "@/components/CommentSection";
-import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 
@@ -57,15 +56,13 @@ export default function PostContent({ post, relatedPosts }: Props) {
     <article className="bg-white rounded-lg shadow-lg overflow-hidden">
       {/* Featured Image */}
       <div className="relative">
-        <Image
-          src={featuredImage}
-          alt={post.title?.rendered || "Post Image"}
-          width={800}
-          height={400}
-          className="w-full h-64 md:h-96 object-cover"
-          loading="lazy"
-          unoptimized 
-        />
+        <img
+  src={featuredImage}
+  alt="..."
+  loading="lazy"
+  className="w-full h-64 md:h-96 object-cover"
+/>
+
         <div className="absolute top-4 left-4">
           <Badge className="bg-red-600 text-white">{category}</Badge>
         </div>
@@ -144,18 +141,13 @@ export default function PostContent({ post, relatedPosts }: Props) {
                 href={`/${rp.slug}`}
                 className="flex gap-4 p-4 rounded-lg hover:shadow-md transition-shadow"
               >
-                <Image
-                  src={
-                    rp.image ||
-                    "https://via.placeholder.com/80x80?text=No+Image"
-                  }
-                  alt={rp.title || "Related post image"}
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 object-cover rounded"
-                  loading="lazy"
-                  unoptimized 
-                />
+                <img
+  src={rp.image || "https://via.placeholder.com/80x80?text=No+Image"}
+  alt={rp.title || "Related post image"}
+  loading="lazy"
+  className="w-20 h-20 object-cover rounded"
+/>
+
                 <div>
                   <h4 className="font-semibold text-gray-800 line-clamp-2 mb-2">
                     {rp.title}

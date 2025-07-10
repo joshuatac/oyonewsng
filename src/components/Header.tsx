@@ -12,7 +12,6 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { Avatar, AvatarFallback } from './ui/avatar';
-import Image from 'next/image';
 import { useAuth } from '@/context/AuthContext';
 
 
@@ -80,14 +79,15 @@ const Header = () => {
 
               <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
                 {logoUrl ? (
-                  <Image
-                    src={logoUrl}
-                    alt="Oyonews Logo"
-                    width={32}
-                    height={32}
-                    className="mr-2"
-                    unoptimized 
-                  />
+                 <img
+  src={logoUrl}
+  alt="Oyonews Logo"
+  width={32}
+  height={32}
+  className="mr-2"
+  loading="lazy"
+/>
+
                 ) : (
                   <div className="bg-red-600 rounded p-2 mr-2">
                     <div className="text-white font-bold text-sm">ON</div>

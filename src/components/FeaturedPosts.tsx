@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Clock, User, Eye } from "lucide-react";
-import Image from "next/image";
 
 const SkeletonPost = ({ featured = false }: { featured?: boolean }) => (
   <article
@@ -147,14 +146,13 @@ const FeaturedPosts = () => {
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block"
               >
                 <div className="relative overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    unoptimized // 🛠 for external image URLs
-                    className={`w-full object-cover transition-transform duration-300 group-hover:scale-110 ${index === 0 ? "h-64 md:h-80" : "h-48"}`}
-                    width={800}
-                    height={400}
-                  />
+                 <img
+  src={post.image}
+  alt={post.title}
+  loading="lazy"
+  className={`w-full object-cover transition-transform duration-300 group-hover:scale-110 ${index === 0 ? "h-64 md:h-80" : "h-48"}`}
+/>
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <Badge className="absolute top-4 left-4 bg-red-500 hover:bg-red-600 text-white">
                     {post.category}

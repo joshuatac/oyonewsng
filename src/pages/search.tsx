@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import {
   Search as SearchIcon,
@@ -174,17 +173,13 @@ export default function SearchPage() {
                 className="bg-white shadow rounded overflow-hidden"
               >
                 <Link href={`/${post.slug}`}>
-                  <Image
-                    src={
-                      post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-                      "https://via.placeholder.com/400x200"
-                    }
-                    alt={post.title.rendered}
-                    width={400}
-                    height={200}
-                    className="w-full h-48 object-cover"
-                    unoptimized 
-                  />
+                  <img
+  src={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/400x200"}
+  alt={post.title.rendered}
+  className="w-full h-48 object-cover"
+  loading="lazy"
+/>
+
                 </Link>
                 <div className="p-4">
                   <Badge className="bg-red-600 text-white">

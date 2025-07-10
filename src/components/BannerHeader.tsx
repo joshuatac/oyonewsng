@@ -1,6 +1,4 @@
-// components/BannerHeader.tsx
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export default function BannerHeader() {
   const [banner, setBanner] = useState<{ banner_image: string; banner_link: string } | null>(null);
@@ -21,13 +19,17 @@ export default function BannerHeader() {
 
   return (
     <a href={banner.banner_link} target="_blank" rel="noopener noreferrer">
-      <Image
+      <img
         src={banner.banner_image}
         alt="Banner"
-        width={1200}
-        height={300}
-        layout="responsive"
-        unoptimized 
+        style={{
+          width: "100%",
+          height: "auto",
+          maxWidth: "1200px",
+          display: "block",
+          margin: "0 auto"
+        }}
+        loading="lazy"
       />
     </a>
   );

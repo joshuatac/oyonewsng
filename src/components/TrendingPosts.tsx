@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Clock, Eye } from "lucide-react";
 
@@ -124,14 +123,13 @@ const TrendingPosts = () => {
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 relative">
                     <div className="relative w-16 h-16 rounded-lg overflow-hidden">
-                      <Image
-                        src={post.featured_media_src}
-                        alt={post.title.rendered}
-                        fill
-                        className="object-cover"
-                        sizes="64px"
-                        unoptimized 
-                      />
+                     <img
+  src={post.featured_media_src}
+  alt={post.title.rendered}
+  loading="lazy"
+  className="w-full h-full object-cover"
+/>
+
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
