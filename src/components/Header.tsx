@@ -80,13 +80,13 @@ const Header = () => {
               <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
                 {logoUrl ? (
                  <img
-  src={logoUrl}
-  alt="Oyonews Logo"
-  width={32}
-  height={32}
-  className="mr-2"
-  loading="lazy"
-/>
+                  src={logoUrl}
+                  alt="Oyonews Logo"
+                  width={32}
+                  height={32}
+                  className="mr-2"
+                  loading="lazy"
+                />
 
                 ) : (
                   <div className="bg-red-600 rounded p-2 mr-2">
