@@ -35,7 +35,7 @@ const Hero = () => {
 
 
   useEffect(() => {
-    fetch('https://api.oyonews.com.ng/wp-json/wp/v2/posts?per_page=6&_embed')
+    fetch('https://oyonews.com.ng/wp-json/wp/v2/posts?per_page=6&_embed')
       .then((res) => res.json())
       .then((data) => {
         const mapped: Post[] = (data as WPPost[]).map((post) => ({

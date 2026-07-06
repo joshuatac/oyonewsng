@@ -50,14 +50,14 @@ const CategoryPage = () => {
       setLoading(true);
       try {
         const catRes = await fetch(
-          `https://api.oyonews.com.ng/wp-json/wp/v2/categories?slug=${categoryName}`
+          `https://oyonews.com.ng/wp-json/wp/v2/categories?slug=${categoryName}`
         );
         const catData = await catRes.json();
         if (!catData.length) return;
 
         const catId = catData[0].id;
         const res = await fetch(
-          `https://api.oyonews.com.ng/wp-json/wp/v2/posts?_embed&categories=${catId}`
+          `https://oyonews.com.ng/wp-json/wp/v2/posts?_embed&categories=${catId}`
         );
         const data = await res.json();
 

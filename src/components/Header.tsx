@@ -34,7 +34,7 @@ const Header = () => {
   useEffect(() => {
     const fetchLogo = async () => {
       try {
-        const res = await fetch('https://api.oyonews.com.ng/wp-json');
+        const res = await fetch('https://oyonews.com.ng/wp-json');
         const data = await res.json();
         if (data?.site_icon_url) setLogoUrl(data.site_icon_url);
       } catch (error) {
@@ -108,7 +108,7 @@ const Header = () => {
               {isAuthenticated && (
                 user?.role === 'administrator' ? (
                   <a
-                    href="https://api.oyonews.com.ng/wp-admin"
+                    href="https://oyonews.com.ng/wp-admin"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-red-400"
@@ -137,7 +137,7 @@ const Header = () => {
                     <DropdownMenuItem
                       onClick={() => {
                         if (user?.role === 'administrator') {
-                          window.open('https://api.oyonews.com.ng/wp-admin', '_blank');
+                          window.open('https://oyonews.com.ng/wp-admin', '_blank');
                         } else {
                           router.push('/dashboard');
                         }
@@ -205,7 +205,7 @@ const Header = () => {
               {isAuthenticated &&
                 (user?.role === 'administrator' ? (
                   <a
-                    href="https://api.oyonews.com.ng/wp-admin"
+                    href="https://oyonews.com.ng/wp-admin"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block px-4 py-3 text-white hover:text-red-400 hover:bg-gray-800 transition rounded mx-2"

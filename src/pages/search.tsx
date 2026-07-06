@@ -21,7 +21,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MainNav from "@/components/MainNav";
 
-const API_BASE = "https://api.oyonews.com.ng/wp-json/wp/v2";
+const API_BASE = "https://oyonews.com.ng/wp-json/wp/v2";
 
 // Type Definitions
 interface Category {

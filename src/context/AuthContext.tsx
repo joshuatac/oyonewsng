@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   const login = async (email: string, password: string) => {
-    const tokenRes = await fetch('https://api.oyonews.com.ng/wp-json/jwt-auth/v1/token', {
+    const tokenRes = await fetch('https://oyonews.com.ng/wp-json/jwt-auth/v1/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: email, password }),
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       throw new Error(tokenData.message || 'Invalid credentials');
     }
 
-    const userRes = await fetch('https://api.oyonews.com.ng/wp-json/wp/v2/users/me', {
+    const userRes = await fetch('https://oyonews.com.ng/wp-json/wp/v2/users/me', {
       headers: { Authorization: `Bearer ${tokenData.token}` },
     });
 

@@ -32,7 +32,7 @@ type WPCategory = {
   count: number;
 };
 
-const BASE_URL = "https://api.oyonews.com.ng/wp-json/wp/v2";
+const BASE_URL = "https://oyonews.com.ng/wp-json/wp/v2";
 
 const Spinner = () => (
   <div className="flex justify-center py-8">

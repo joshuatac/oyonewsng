@@ -4,7 +4,7 @@ import { RelatedPost, WPPost } from "@/lib/types";
 
 const API_BASE =
   process.env.WORDPRESS_API_URL ||
-  "https://api.oyonews.com.ng/wp-json/wp/v2";
+  "https://oyonews.com.ng/wp-json/wp/v2";
 
 // Get all slugs for static generation
 export async function fetchAllSlugs(): Promise<string[]> {
@@ -20,7 +20,7 @@ export async function fetchPostBySlug(slug: string): Promise<WPPost | null> {
 
   try {
     const res = await fetch(
-      `https://api.oyonews.com.ng/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+      `https://oyonews.com.ng/wp-json/wp/v2/posts?slug=${slug}&_embed`,
       { signal: controller.signal }
     );
 

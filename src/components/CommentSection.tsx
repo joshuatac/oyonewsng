@@ -55,7 +55,7 @@ const CommentsSection = ({ postId }: Props) => {
     if (!jwt) return;
 
     setLoadingUser(true);
-    fetch("https://api.oyonews.com.ng/wp-json/wp/v2/users/me", {
+    fetch("https://oyonews.com.ng/wp-json/wp/v2/users/me", {
       headers: {
         Authorization: `Bearer ${jwt}`,
       },
@@ -86,7 +86,7 @@ const CommentsSection = ({ postId }: Props) => {
 
     setLoadingComments(true);
     fetch(
-      `https://api.oyonews.com.ng/wp-json/wp/v2/comments?post=${postId}&per_page=100`
+      `https://oyonews.com.ng/wp-json/wp/v2/comments?post=${postId}&per_page=100`
     )
       .then((res) => res.json())
       .then(setComments)
@@ -113,7 +113,7 @@ const CommentsSection = ({ postId }: Props) => {
     };
 
     try {
-      const res = await fetch("https://api.oyonews.com.ng/wp-json/wp/v2/comments", {
+      const res = await fetch("https://oyonews.com.ng/wp-json/wp/v2/comments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

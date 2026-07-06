@@ -16,7 +16,7 @@ const Newsletter = () => {
     setErrorMsg('');
 
     try {
-      const res = await fetch('https://api.oyonews.com.ng/wp-json/newsletter/subscribe', {
+      const res = await fetch('https://oyonews.com.ng/wp-json/newsletter/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

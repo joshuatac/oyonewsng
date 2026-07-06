@@ -50,7 +50,7 @@ const LoginPage = () => {
       // Optional redirect based on role if stored in localStorage
       const user = JSON.parse(localStorage.getItem('user') || '{}');
       if (user.role === 'administrator') {
-        window.location.href = 'https://api.oyonews.com.ng/wp-admin';
+        window.location.href = 'https://oyonews.com.ng/wp-admin';
       } else {
         router.push('/');
       }

@@ -40,7 +40,7 @@ const Signup = () => {
 
     try {
       const res = await fetch(
-        'https://api.oyonews.com.ng/wp-json/oyonews/v1/register',
+        'https://oyonews.com.ng/wp-json/oyonews/v1/register',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -60,7 +60,7 @@ const Signup = () => {
       const userRole = data.user.roles?.[0] || 'subscriber';
 
       if (userRole === 'administrator') {
-        window.location.href = 'https://api.oyonews.com.ng/wp-admin';
+        window.location.href = 'https://oyonews.com.ng/wp-admin';
       } else {
         router.push('/');
       }
